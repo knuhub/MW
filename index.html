@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>서비스 점검 안내 · KNUHUB</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --fg:#111418; --muted:#6b7280; --line:#e5e7eb; --card:#fff; --accent:#2563eb;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0d0f12; --fg:#f3f4f6; --muted:#9ca3af; --line:#23272e; --card:#14171b; --accent:#60a5fa;}
+  }
+  *{box-sizing:border-box;margin:0}
+  body{
+    min-height:100vh; display:grid; place-items:center; padding:24px 16px;
+    background:var(--bg); color:var(--fg);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{width:100%; max-width:480px; text-align:center}
+  .logo{font-size:13px; letter-spacing:.2em; color:var(--muted); font-weight:600; margin-bottom:40px}
+  .icon{
+    width:56px; height:56px; margin:0 auto 28px; border-radius:16px;
+    display:grid; place-items:center; background:var(--card); border:1px solid var(--line);
+  }
+  .icon svg{width:26px; height:26px; stroke:var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+  h1{font-size:28px; font-weight:700; letter-spacing:-.02em; margin-bottom:12px}
+  p.lead{color:var(--muted); font-size:16px; line-height:1.7}
+  .time{
+    margin:36px auto 0; padding:20px 24px; background:var(--card);
+    border:1px solid var(--line); border-radius:16px; text-align:left;
+  }
+  .time dt{font-size:12px; color:var(--muted); margin-bottom:6px}
+  .time dd{font-size:18px; font-weight:600; letter-spacing:-.01em}
+  .time dd span{color:var(--muted); font-weight:500}
+  footer{margin-top:40px; font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="logo">KNUHUB</div>
+  <div class="icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
+  </div>
+  <h1>서비스 점검 중입니다</h1>
+  <p class="lead">더 나은 서비스를 위해 점검을 진행하고 있습니다.<br>이용에 불편을 드려 죄송합니다.</p>
+
+  <dl class="time">
+    <dt>점검 시간</dt>
+    <dd>미정 <span>· 확정 시 안내드리겠습니다</span></dd>
+  </dl>
+
+  <footer>© KNUHUB</footer>
+</main>
+</body>
+</html>
