@@ -39,14 +39,12 @@
   .gear{width:170px;height:170px;animation:spin 18s linear infinite;filter:drop-shadow(0 10px 18px rgba(20,60,120,.35))}
   @keyframes spin{to{transform:rotate(360deg)}}
   .tools{position:absolute;width:104px;height:104px;filter:drop-shadow(0 4px 6px rgba(20,60,120,.3))}
-  .clock{
-    position:absolute; left:-6px; top:-4px; width:64px; height:64px; border-radius:50%;
-    background:#f4f8ff; border:5px solid #3f88d8; box-shadow:0 6px 14px rgba(20,60,120,.3);
+  .hourglass{
+    position:absolute; left:-4px; top:-6px; width:56px; height:64px;
+    filter:drop-shadow(0 6px 10px rgba(20,60,120,.3));
   }
-  .clock i{position:absolute;left:50%;top:50%;width:3px;background:#1d3b66;border-radius:2px;transform-origin:50% 100%}
-  .clock .h{height:15px;transform:translate(-50%,-100%) rotate(30deg)}
-  .clock .m{height:21px;transform:translate(-50%,-100%) rotate(0deg);animation:tick 12s linear infinite}
-  @keyframes tick{to{transform:translate(-50%,-100%) rotate(360deg)}}
+  .hourglass .flip{transform-origin:50% 50%;animation:flip 6s ease-in-out infinite}
+  @keyframes flip{0%,80%{transform:rotate(0)}100%{transform:rotate(180deg)}}
 
   .bar{
     width:min(300px,80%); height:16px; margin:0 auto 30px; border-radius:99px; padding:3px;
@@ -75,13 +73,21 @@
 
   .contact{margin-top:18px;font-size:14px;color:var(--soft)}
   footer{margin-top:32px;font-size:12px;color:rgba(255,255,255,.7)}
-  @media (prefers-reduced-motion:reduce){.gear,.bar span,.clock .m{animation:none}}
+  @media (prefers-reduced-motion:reduce){.gear,.bar span,.hourglass .flip{animation:none}}
 </style>
 </head>
 <body>
 <main>
   <div class="badge" aria-hidden="true">
-    <div class="clock"><i class="h"></i><i class="m"></i></div>
+    <svg class="hourglass" viewBox="0 0 56 64">
+      <g class="flip">
+        <path d="M14 12h28v8c0 8-8 11-8 12s8 4 8 12v8H14v-8c0-8 8-11 8-12s-8-4-8-12z" fill="#f4f8ff" stroke="#3f88d8" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M19 15h18v5c0 5-9 9-9 12 0-3-9-7-9-12z" fill="#ffa94d"/>
+        <path d="M22 50c3-5 9-5 12 0v1H22z" fill="#ffa94d"/>
+        <rect x="9" y="6" width="38" height="6" rx="3" fill="#3f88d8"/>
+        <rect x="9" y="52" width="38" height="6" rx="3" fill="#3f88d8"/>
+      </g>
+    </svg>
 
     <svg class="gear" viewBox="0 0 200 200">
       <defs>
